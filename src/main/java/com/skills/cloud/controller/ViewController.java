@@ -20,7 +20,7 @@ public class ViewController {
 	@ResponseBody
 	@GetMapping("/health")
 	public HealthDTO health(){
-		String url = "http://cloud.skills.com:8080/health";
+		String url = "http://cloud.skills.com/health";
 		RestTemplate restTemplate = new RestTemplate();
 		HealthDTO result = restTemplate.getForObject(url, HealthDTO.class);
 		return result;
