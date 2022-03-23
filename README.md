@@ -6,6 +6,8 @@
 ## Language/Framework
 
 #### Java/Spring Boot(Gradle)
+#### Java Version : 11
+#### Tomcat Version : 9.0.60
 #### Service_A port : 8080
 #### Service_B port : 8080
 #### Health check path : /health
