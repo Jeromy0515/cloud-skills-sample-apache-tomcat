@@ -22,8 +22,8 @@ wget https://dlcdn.apache.org/tomcat/tomcat-9/v9.0.60/bin/apache-tomcat-9.0.60.t
 tar -zvxf apache-tomcat-9.0.60.tar.gz
 ```
 
-## How to Run Web Application Server with Apache Tomcat and WAR File
-
+## How to deploy in war file to Apache Tomcat  
+### Deploy by configure server.xml
 Clone the appropriate branch for each EC2 instance
 ```
 git clone https://github.com/Jeromy0515/cloud-skills-sample-apache-tomcat-msa.git -b <service-a or service-b>
@@ -52,3 +52,33 @@ Start application by executing `/apache-tomcat-9.0.60/bin/startup.sh`
 
 If you restart application, execute `/apache-tomcat-9.0.60/bin/shutdown.sh` and execute `/apache-tomcat-9.0.60/bin/startup.sh`
 
+### Deploy by change file name 
+
+Clone the appropriate branch for each EC2 instance
+```
+git clone https://github.com/Jeromy0515/cloud-skills-sample-apache-tomcat-msa.git -b <service-a or service-b>
+```
+
+Change war file name to `ROOT.war`
+```
+mv <your-war-file> ROOT.war
+```
+
+Remove directory `/apache-tomcat-9.0.60/webapps/ROOT` 
+```
+rm -rf /apache-tomcat-9.0.60/webapps/ROOT
+```
+
+Move `ROOT.war` to `/apache-tomcat-9.0.60/webapps`
+```
+mv ROOT.war /apache-tomcat-9.0.60/webapps
+```
+
+Start application by executing `/apache-tomcat-9.0.60/bin/startup.sh`
+
+
+## How to deploy war file to Apache Tomcat with Docker
+
+```
+docker run -p 3000:8080 -v ./cloud-skills-apache-tomcat-a.war:/usr/local/tomcat/webapps/ --name="tomcat" -d public.ecr.aws/docker/library/tomcat:latest
+```
