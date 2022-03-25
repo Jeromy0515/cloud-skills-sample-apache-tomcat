@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="affe66a7-fba8-4f24-9c1e-819d076280dc" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/user_data.sh" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,17 +35,6 @@
     <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="RunManager">
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration default="true" type="DjangoTestsConfigurationType">
       <module name="cloud-skills-apache-tomcat" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -216,7 +205,9 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1647995691012</updated>
-      <workItem from="1647995692159" duration="13693000" />
+      <workItem from="1647995692159" duration="14942000" />
+      <workItem from="1648081741257" duration="7000" />
+      <workItem from="1648209491090" duration="277000" />
     </task>
     <servers />
   </component>
@@ -233,5 +224,6 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
 </project>

@@ -77,6 +77,27 @@ mv ROOT.war /apache-tomcat-9.0.60/webapps
 Start application by executing `/apache-tomcat-9.0.60/bin/startup.sh`
 
 
+## How to deploy war file in Apache Tomcat installed by amazon-linux-extras
+Install Apache Tomcat with `amazon-linux-extras`
+```
+amazon-linux-extras install tomcat9
+```
+
+Change war file name to `ROOT.war`
+```
+mv <your-war-file> ROOT.war
+```
+
+Move `ROOT.war` to `/var/lib/tomcat/webapps`
+```
+mv ROOT.war /var/lib/tomcat/webapps
+```
+
+Start application using this command
+```
+systemctl start tomcat
+```
+
 ## How to deploy war file to Apache Tomcat with Docker
 
 ```
