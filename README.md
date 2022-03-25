@@ -23,7 +23,7 @@ tar -zvxf apache-tomcat-9.0.60.tar.gz
 ```
 
 ## How to deploy in war file to Apache Tomcat  
-### Deploy by configure server.xml
+### Deploy by configuring server.xml
 Clone the appropriate branch for each EC2 instance
 ```
 git clone https://github.com/Jeromy0515/cloud-skills-sample-apache-tomcat-msa.git -b <service-a or service-b>
@@ -52,7 +52,7 @@ Start application by executing `/apache-tomcat-9.0.60/bin/startup.sh`
 
 If you restart application, execute `/apache-tomcat-9.0.60/bin/shutdown.sh` and execute `/apache-tomcat-9.0.60/bin/startup.sh`
 
-### Deploy by change file name 
+### Deploy by changing file name 
 
 Clone the appropriate branch for each EC2 instance
 ```
@@ -100,6 +100,40 @@ systemctl start tomcat
 
 ## How to deploy war file to Apache Tomcat with Docker
 
+### Deploy by copying file
+
+Run Apache Tomcat in Docker Container
 ```
-docker run -p 3000:8080 -v ./cloud-skills-apache-tomcat-a.war:/usr/local/tomcat/webapps/ --name="tomcat" -d public.ecr.aws/docker/library/tomcat:latest
+docker run --name tomcat -d -p 8080:8080 public.ecr.aws/docker/library/tomcat:9 
+```
+
+Copy `ROOT.war` to `tomcat:/usr/local/tomcat/webapps`
+```
+docker cp ROOT.war tomcat:/usr/local/tomcat/webapps
+```
+
+Check the file is copied successfully
+```
+docker exec -it tomcat /bin/bash
+```
+
+Test Web Application to run successfully
+```
+curl localhost:8080
+```
+
+### Deploy by mounting volume
+
+```
+docker run --name tomcat -v /var/lib/tomcat/webapps:/usr/local/tomcat/webapps -d -p 8080:8080 public.ecr.aws/docker/library/tomcat:9
+```
+
+Check the volume is mounted successfully
+```
+docker exec -it tomcat /bin/bash
+```
+
+Test Web Application to run successfully
+```
+curl localhost:8080
 ```
